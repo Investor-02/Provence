@@ -257,6 +257,10 @@ button {
   width: min(1120px, 100%);
 }
 
+.hero-mobile-caption {
+  display: none;
+}
+
 .hero h1,
 .page-hero h1,
 .section-heading h2,
@@ -918,12 +922,51 @@ button {
   }
 
   .hero {
-    min-height: auto;
+    min-height: 74svh;
+    align-items: stretch;
   }
 
   .hero__content,
   .page-hero__content {
     padding: 74px 0 60px;
+  }
+
+  .hero--photo .hero__content {
+    display: none;
+  }
+
+  .hero-mobile-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 24px;
+    display: block;
+    z-index: 2;
+  }
+
+  .hero-mobile-caption p {
+    margin: 0;
+    max-width: min(92%, 320px);
+    padding: 0;
+    color: var(--text);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.35rem, 5.2vw, 1.8rem);
+    line-height: 1.08;
+    text-wrap: balance;
+    background: none;
+    backdrop-filter: none;
+    text-shadow: 0 6px 22px rgba(0, 0, 0, 0.34), 0 2px 8px rgba(0, 0, 0, 0.22);
+    box-shadow: none;
+  }
+
+  .hero--photo .hero__backdrop {
+    background:
+      linear-gradient(180deg, rgba(8, 13, 20, 0.04), rgba(8, 13, 20, 0.02) 52%, rgba(8, 13, 20, 0.16) 100%);
+  }
+
+  .hero::before {
+    background-position: center center;
+    transform: scale(1.02);
   }
 
   .feature-grid,
@@ -976,6 +1019,19 @@ button {
 
   .hero h1 {
     max-width: none;
+  }
+
+  .hero {
+    min-height: 70svh;
+  }
+
+  .hero-mobile-caption {
+    bottom: 18px;
+  }
+
+  .hero-mobile-caption p {
+    max-width: min(94%, 290px);
+    font-size: clamp(1.2rem, 5.8vw, 1.55rem);
   }
 
   .hero__lead,
